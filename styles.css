@@ -1,0 +1,187 @@
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --text-color: #333;
+}
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--secondary-color);
+    animation: fadeIn 2s ease-in-out; 
+}
+
+/* Typewriter effect for text */
+.hero h1 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #007bff;
+    width: 0;
+    animation: typewriter 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Typewriter effect keyframes */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* About Section */
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards 1s; /* Delay to appear after hero section */
+}
+
+/* Project Section */
+#projects .card {
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards 0.5s; /* Fade in with slide-up animation */
+    transition: transform 0.3s ease-in-out; /* Hover effect transition */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Slight upward movement on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow on hover */
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+}
+
+/* Skills Section */
+.skill-card {
+    padding: 10px;
+    text-align: center;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards 0.5s; /* Fade in with slide up animation */
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-icon {
+    width: 100px;  /* Adjust size of the icon */
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);  /* Enlarge the icon slightly on hover */
+}
+
+.skill-card:hover p {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+/* Skills Header */
+h4 {
+    margin-top: 30px;
+    font-size: 1.8rem;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards 1.5s; /* Fade-in animation for the header */
+}
+
+/* Style the progress bars */
+.skills .progress {
+    background-color: #e0e0e0; /* Light grey background for the progress bar */
+    border: 2px solid #007bff; /* Blue border outline */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between progress bars */
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards 1s; /* Fade in with slide up animation */
+}
+
+/* Progress Bar Inside Animation */
+.skills .progress-bar {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding-right: 5px; /* Space on the right for the percentage text */
+    background-color: #093454; /* Green color for filled portion of progress bar */
+    border-radius: 3px; /* Rounded corners for the bar */
+    width: 0%; /* Initially set to 0% */
+    animation: fillBar 2s ease-in-out forwards; /* Animation to fill the progress bar */
+}
+
+/* Progress Bar fill animation */
+@keyframes fillBar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 90%; /* Customize for each progress bar */
+    }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}
